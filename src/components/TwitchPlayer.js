@@ -5,7 +5,7 @@ function TwitchPlayer({ channel }) {
     <div className="twitch-player">
       <iframe
         src={`https://player.twitch.tv/?channel=${channel}&parent=localhost&parent=yourdomain.com`}
-        height="400"
+        height="700"
         width="100%"
         allowFullScreen
         frameBorder="0"
