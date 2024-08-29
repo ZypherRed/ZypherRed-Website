@@ -32,4 +32,4 @@ jobs:
           publish_dir: ./build
           # The following options force create the branch if it doesn't exist
           allow_empty_commit: true   # Allows deployment even if nothing changed
-          force_orphan: true         # Creates a new branch if gh-pages doesn't exist
+          force_orphan: true  
