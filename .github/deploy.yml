@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # This triggers the workflow on push to the main branch
+      - main  # Triggers the workflow on push to the main branch
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Specify the Node.js version
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
@@ -28,8 +28,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages  # Ensure this is set to the correct branch
+          publish_branch: gh-pages
           publish_dir: ./build
-          # The following options force create the branch if it doesn't exist
-          allow_empty_commit: true
-          force_orphan: true  
+          # If you have a CNAME file, ensure it remains during deployment
+          keep_files: true
