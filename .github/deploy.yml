@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Triggers the workflow on push to the main branch
+      - main  # This triggers the workflow on push to the main branch
 
 jobs:
   build:
@@ -28,5 +28,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
+          publish_branch: gh-pages  # Ensure this is set to the correct branch
           publish_dir: ./build
+          # The following options force create the branch if it doesn't exist
+          allow_empty_commit: true   # Allows deployment even if nothing changed
+          force_orphan: true         # Creates a new branch if gh-pages doesn't exist
