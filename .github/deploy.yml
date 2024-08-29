@@ -31,5 +31,5 @@ jobs:
           publish_branch: gh-pages  # Ensure this is set to the correct branch
           publish_dir: ./build
           # The following options force create the branch if it doesn't exist
-          allow_empty_commit: true   # Allows deployment even if nothing changed
+          allow_empty_commit: true
           force_orphan: true  
